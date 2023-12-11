@@ -10,6 +10,8 @@ package Entidades;
  * @author Estandates
  */
 public class Produto {
+    
+    private static int size=0;
     private long codigo;
     private String nome;
     private String especificacoes;
@@ -17,13 +19,14 @@ public class Produto {
     private float precoCusto;
     private boolean habilitadoVendas;
 
-    public Produto(long codigo, String nome, String especificacoes, float precoVenda, float precoCusto, boolean habilitadoVendas) {
-        this.codigo = codigo;
+    public Produto(String nome, String especificacoes, float precoVenda, float precoCusto, boolean habilitadoVendas) {
+        this.codigo = size+1;
         this.nome = nome;
         this.especificacoes = especificacoes;
         this.precoVenda = precoVenda;
         this.precoCusto = precoCusto;
         this.habilitadoVendas = habilitadoVendas;
+        size++;
     }
 
     public long getCodigo() {
